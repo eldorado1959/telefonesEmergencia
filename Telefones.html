@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Telefones de Emergência</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+  <!-- Botão de disfarce -->
+  <button class="disfarce-btn" onclick="ativarDisfarce()">Disfarçar</button>
+
+  <!-- Tela principal -->
+  <div id="tela-principal">
+    <h1>Telefones de Emergência</h1>
+
+    <button class="btn" onclick="confirmarLigacao('Polícia Militar', '190')">Polícia Militar</button>
+    <button class="btn" onclick="confirmarLigacao('Bombeiros', '193')">Bombeiros</button>
+    <button class="btn" onclick="confirmarLigacao('SAMU - Ambulância', '192')">SAMU - Ambulância</button>
+    <button class="btn" onclick="confirmarLigacao('Defesa Civil', '199')">Defesa Civil</button>
+    <button class="btn" onclick="confirmarLigacao('Disque Denúncia', '181')">Disque Denúncia</button>
+    <button class="btn" onclick="confirmarLigacao('Central de Atendimento à Mulher', '180')">Violência contra a Mulher</button>
+    <button class="btn" onclick="confirmarLigacao('Direitos Humanos', '100')">Direitos Humanos</button>
+
+    <div class="output" id="saida"></div>
+  </div>
+
+  <!-- Tela de disfarce -->
+  <div id="tela-disfarce" class="hidden">
+    <h1>Previsão do Tempo</h1>
+    <p>Hoje: Sol com algumas nuvens. Máx: 28°C | Mín: 17°C.</p>
+    <p>Amanhã: Pancadas de chuva à tarde. Máx: 26°C | Mín: 18°C.</p>
+    <button class="btn" onclick="desativarDisfarce()">Voltar</button>
+  </div>
+
+  <!-- Modal personalizado -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <p id="modal-text">Deseja ligar para ...?</p>
+      <button class="btn-sim" onclick="ligarAgora()">Sim</button>
+      <button class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
